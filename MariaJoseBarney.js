@@ -29,8 +29,19 @@ let testWordsList = [
 
 // pruebe para cada palabra A, B y C
 function wordSearcherIgnoreCase(targetWord, wordsList) {
-   // :)
+    let minusList = wordsList.map(element => element.toLowerCase());
+    
+    
+    console.log(minusList)
+    console.log(minusList.some(element => targetWord.toLowerCase() === element ))
 }
+
+function normalizeString (unaccentedWord) {
+    return unaccentedWord = unaccentedWord.normalize ("NFD").replace(/[\u0300-\u036f]/g,""); 
+    console.log (unaccentedWord);
+}
+
+wordSearcherIgnoreCase(testTargetWordC,testWordsList);
 
 
 
