@@ -30,6 +30,9 @@ let testWordsList = [
 // pruebe para cada palabra A, B y C
 function wordSearcherIgnoreCase(targetWord, wordsList) {
     let minusList = wordsList.map(element => element.toLowerCase());
+    targetWord= targetWord.toLowerCase();
+    targetWord= targetWord.normalizeString();
+    targetWord = 
     
     
     console.log(minusList)
@@ -37,10 +40,10 @@ function wordSearcherIgnoreCase(targetWord, wordsList) {
 }
 
 function normalizeString (unaccentedWord) {
-    return unaccentedWord = unaccentedWord.normalize ("NFD").replace(/[\u0300-\u036f]/g,""); 
-    console.log (unaccentedWord);
+    return unaccentedWord = unaccentedWord.normalize ("NFD").replace(/[\u0300-\u036f]/g,"");
 }
-
+wordSearcherIgnoreCase(testTargetWordA,testWordsList);
+wordSearcherIgnoreCase(testTargetWordB,testWordsList);
 wordSearcherIgnoreCase(testTargetWordC,testWordsList);
 
 
@@ -93,8 +96,10 @@ let wordArrayA = ["hola", "¿" ,"cómo", "estás", "?"];
 let wordArrayB = ["te", "ves" ,"igual", "te", "ves", "igual"];
 
 function arrayJoiner(listA, listB) {
- // :)
+    const lists = listA.concat(listB);
+    console.log(lists);
 }
+arrayJoiner(wordArrayA, wordArrayB);
 
 
 /*Dado un arreglo de strings indicar qué posiciones del arreglo
