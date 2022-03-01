@@ -4,10 +4,35 @@
 
 let testWord = "esternocleidomastoideo";
 function wordCutter(word) {
-    testWord = testWord.split("")
+    const wordLength = word.length;
+    const indexes = [];
+    for (let i = 0; i < word.length; i++) {
+        let isIndex = true;
+
+        while (isIndex) {
+            let random = Math.random()*(wordLength-1);
+            let randomIndex = Math.round(random);
+            if (indexes.includes(randomIndex)){
+                 random = Math.random()*(wordLength-1)
+                 randomIndex = Math.round(random);
+            }
+            else {
+                indexes.push(randomIndex);
+                isIndex = false;
+            }
+            
+        }
+        
+    }
+        
+    }
+    /*testWord = testWord.split("")
     console.log (testWord);
-   // :)
-}
+   // :)*/
+
+
+
+
 wordCutter(testWord);
 
 /*Dado un string buscar en un listado e indicar si se encuentra o no
@@ -28,7 +53,7 @@ let testWordsList = [
 ];
 
 // pruebe para cada palabra A, B y C
-function wordSearcherIgnoreCase(targetWord, wordsList) {
+/*function wordSearcherIgnoreCase(targetWord, wordsList) {
     let minusList = wordsList.map(element => element.toLowerCase());
     targetWord= targetWord.toLowerCase();
     targetWord= targetWord.normalizeString();
@@ -44,7 +69,7 @@ function normalizeString (unaccentedWord) {
 }
 wordSearcherIgnoreCase(testTargetWordA,testWordsList);
 wordSearcherIgnoreCase(testTargetWordB,testWordsList);
-wordSearcherIgnoreCase(testTargetWordC,testWordsList);
+wordSearcherIgnoreCase(testTargetWordC,testWordsList);*/
 
 
 
