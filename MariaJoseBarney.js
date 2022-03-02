@@ -3,8 +3,32 @@
 /*Dada una cadena de texto (string) separe y muestre en consola los caracteres de forma desordenada uno por línea, 1 caracter a la vez.*/
 
 let testWord = "esternocleidomastoideo";
+
 function wordCutter(word) {
-    const wordLength = word.length;
+     word = word.split("");
+    console.log(word);
+
+    /* let random = word
+        .map(item => ({item, sort: Math.random()}))
+        .sort((a,b) => a.sort - b.sort)
+        .map(({value}) => value)
+    
+    console.log(random)*/
+
+    function wordCutter(word) {
+        word = word.split("");
+       console.log(word);
+    
+       let random = word
+           .map(item => ({item, sort: Math.random()}))
+           .sort((a,b) => a.sort - b.sort)
+           .map(({item}) => item)
+       
+       console.log(random)
+    
+    }
+
+/*     const wordLength = word.length;
     const indexes = [];
     for (let i = 0; i < word.length; i++) {
         let isIndex = true;
@@ -23,14 +47,13 @@ function wordCutter(word) {
             
         }
         
-    }
+    } */
         
+    
     }
     /*testWord = testWord.split("")
     console.log (testWord);
    // :)*/
-
-
 
 
 wordCutter(testWord);
@@ -53,23 +76,20 @@ let testWordsList = [
 ];
 
 // pruebe para cada palabra A, B y C
-/*function wordSearcherIgnoreCase(targetWord, wordsList) {
+function wordSearcherIgnoreCase(targetWord, wordsList) {
     let minusList = wordsList.map(element => element.toLowerCase());
     targetWord= targetWord.toLowerCase();
-    targetWord= targetWord.normalizeString();
-    targetWord = 
-    
-    
+    targetWord= normalizeString(targetWord);
     console.log(minusList)
     console.log(minusList.some(element => targetWord.toLowerCase() === element ))
 }
 
-function normalizeString (unaccentedWord) {
-    return unaccentedWord = unaccentedWord.normalize ("NFD").replace(/[\u0300-\u036f]/g,"");
+function normalizeString (targetWord) {
+    return targetWord = targetWord.normalize ("NFD").replace(/[\u0300-\u036f]/g,"");
 }
 wordSearcherIgnoreCase(testTargetWordA,testWordsList);
 wordSearcherIgnoreCase(testTargetWordB,testWordsList);
-wordSearcherIgnoreCase(testTargetWordC,testWordsList);*/
+wordSearcherIgnoreCase(testTargetWordC,testWordsList);
 
 
 
@@ -96,14 +116,27 @@ function wordLengthClassifier(wordsList) {
 
 /*Dado un string retorna si este es o no un palíndromo. No debe diferenciar entre mayúsculas y minúsculas*/
 
+/*console.log("";
+console.log("");
+console.log("EX4");*/
+
 let onVerificationWordA = "reconocer";
 let onVerificationWordB = "querer";
 let onVerificationWordC = "Gomosos";
 let onVerificationWordD = "Somos";
 
-function palindromeVerifier(word) {
-   // :)
+function palindromeVerifier(palabra) {
+let poliWord = palabra.toLowerCase().split("").reverse().join("");
+if (poliWord === palabra) {
+    console.log("The Word" + palabra + "is ppolidrome")} 
+    else {
+        console.log("The Word" + word + "in not polindrome")
+    }
 }
+
+
+   // ;)
+
 
 
 /*Dado un objeto que contiene una lista de palabras contar el
