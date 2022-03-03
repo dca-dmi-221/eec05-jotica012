@@ -169,13 +169,36 @@ palindromeVerifier (onVerificationWordD);
 //5
 /*Dado un objeto que contiene una lista de palabras contar el
 número de letras vocales y consonantes y retornarlo en un arreglo de 2 posiciones.*/
+
 let containerTestObject = {
     list: ["Cumbamba", "Oreja", "Nariz", "Ojo", "Lengua", "Diente"]
 }
 
 function lettersCounter(objectContainer) {
-    // :)
+    let vocal = 0;
+    let consonant = 0;
+
+    for (let letterTest = 0; letterTest < objectContainer.list.length; letterTest++) {
+        for (let i = 0; i < objectContainer.list[letterTest].length; i++) {
+            let sameLetter = objectContainer.list[letterTeste][i].toLowerCase();
+
+            if ("a" == sameLetter||"e" == sameLetter||"i" == sameLetter||"o" == sameLetter||"u" == sameLetter){
+                vocal++
+            }
+            else if ("b"== equalLetter||"c"== equalLetter||"d"== equalLetter||"f"== equalLetter||"g"== equalLetter||"h"== equalLetter||"j"== equalLetter||"k"== equalLetter||"l"== equalLetter||"m"== equalLetter||"n"== equalLetter||"p"== equalLetter||"q"== equalLetter||"r"== equalLetter||"s"== equalLetter||"t"== equalLetter||"v"== equalLetter||"w"== equalLetter||"x"== equalLetter||"y"== equalLetter||"z"== equalLetter){
+                consonant++;
+            }
+            
+        }
+        
+    }
+    let output = [vocal, consonant];
+    return output;
+
+
 }
+
+lettersCounter(containerTestObject);
 
 //6
 /*Dado 2 arreglos de strings retornar un arreglo con todos los strings.*/
@@ -205,10 +228,6 @@ function anagramVerifier(wordToExplore, listOfWords) {
         }
     })
 }
-
-
-
-
 
 
 //8
