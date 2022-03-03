@@ -180,22 +180,19 @@ function lettersCounter(objectContainer) {
 
     for (let letterTest = 0; letterTest < objectContainer.list.length; letterTest++) {
         for (let i = 0; i < objectContainer.list[letterTest].length; i++) {
-            let sameLetter = objectContainer.list[letterTeste][i].toLowerCase();
+            let sameLetter = objectContainer.list[letterTest][i].toLowerCase();
 
             if ("a" == sameLetter||"e" == sameLetter||"i" == sameLetter||"o" == sameLetter||"u" == sameLetter){
                 vocal++
             }
-            else if ("b"== equalLetter||"c"== equalLetter||"d"== equalLetter||"f"== equalLetter||"g"== equalLetter||"h"== equalLetter||"j"== equalLetter||"k"== equalLetter||"l"== equalLetter||"m"== equalLetter||"n"== equalLetter||"p"== equalLetter||"q"== equalLetter||"r"== equalLetter||"s"== equalLetter||"t"== equalLetter||"v"== equalLetter||"w"== equalLetter||"x"== equalLetter||"y"== equalLetter||"z"== equalLetter){
+            else if ("b"== sameLetter||"c"== sameLetter||"d"== sameLetter||"f"== sameLetter||"g"== sameLetter||"h"== sameLetter||"j"== sameLetter||"k"== sameLetter||"l"== sameLetter||"m"== sameLetter||"n"== sameLetter||"p"== sameLetter||"q"== sameLetter||"r"== sameLetter||"s"== sameLetter||"t"== sameLetter||"v"== sameLetter||"w"== sameLetter||"x"== sameLetter||"y"== sameLetter||"z"== sameLetter){
                 consonant++;
             }
-            
-        }
-        
+
+        } 
     }
     let output = [vocal, consonant];
     return output;
-
-
 }
 
 lettersCounter(containerTestObject);
@@ -240,10 +237,14 @@ let testObjMultiContainer = {
 };
 
 function vocalsRemoverFromObject(objectMultiContainer) {
-    // :)
+    let lists = objectMultiContainer.listA.concat(objectMultiContainer.listB);
+    for (let i = 0; i < lists.length; i++) {
+        lists[i] = list [i].replace(/[aeiou]/g, "");
+    }
+    console.log(Lists);
 }
 
-console.log(vocalsRemoverFromObject(testObjMultiContainer));
+(vocalsRemoverFromObject(testObjMultiContainer));
 
 //9
 /*Dado un arreglo de palabras reemplazar la última vocal por una x y retornar dicho arreglo.*/
