@@ -110,8 +110,28 @@ let testSampleList = [
 ];
 
 function wordLengthClassifier(wordsList) {
+    let totalLetters = 0;
+    wordsList.forEach(word => totalLetters += word.length);
+    const averageSize = totalLetters / wordsList.length;
+
+    const sortedWords = wordsList.sort((a, b) => {
+        if(a.length < b.length) {
+            return -1;
+        } else if(a.length > b.length) {
+            return 1;
+        } else {
+            return 0;
+        }
+    })
+
+    return {
+        averageSize,
+        shortest: sortedWords[0],
+        longest: sortedWords[sortedWords.length - 1],
+    }
     // :)
 }
+console.log(wordLengthClassifier(testSampleList))
 
 
 /*Dado un string retorna si este es o no un palíndromo. No debe diferenciar entre mayúsculas y minúsculas*/
