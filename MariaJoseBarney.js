@@ -158,10 +158,10 @@ function palindromeVerifier(palabra) {
     }
 }
 
-palindromeVerifier (onVerificationWordA);
-palindromeVerifier (onVerificationWordB);
-palindromeVerifier (onVerificationWordC);
-palindromeVerifier (onVerificationWordD);
+palindromeVerifier(onVerificationWordA);
+palindromeVerifier(onVerificationWordB);
+palindromeVerifier(onVerificationWordC);
+palindromeVerifier(onVerificationWordD);
 
 // ;)
 
@@ -182,14 +182,13 @@ function lettersCounter(objectContainer) {
         for (let i = 0; i < objectContainer.list[letterTest].length; i++) {
             let sameLetter = objectContainer.list[letterTest][i].toLowerCase();
 
-            if ("a" == sameLetter||"e" == sameLetter||"i" == sameLetter||"o" == sameLetter||"u" == sameLetter){
+            if ("a" == sameLetter || "e" == sameLetter || "i" == sameLetter || "o" == sameLetter || "u" == sameLetter) {
                 vocal++
-            }
-            else if ("b"== sameLetter||"c"== sameLetter||"d"== sameLetter||"f"== sameLetter||"g"== sameLetter||"h"== sameLetter||"j"== sameLetter||"k"== sameLetter||"l"== sameLetter||"m"== sameLetter||"n"== sameLetter||"p"== sameLetter||"q"== sameLetter||"r"== sameLetter||"s"== sameLetter||"t"== sameLetter||"v"== sameLetter||"w"== sameLetter||"x"== sameLetter||"y"== sameLetter||"z"== sameLetter){
+            } else if ("b" == sameLetter || "c" == sameLetter || "d" == sameLetter || "f" == sameLetter || "g" == sameLetter || "h" == sameLetter || "j" == sameLetter || "k" == sameLetter || "l" == sameLetter || "m" == sameLetter || "n" == sameLetter || "p" == sameLetter || "q" == sameLetter || "r" == sameLetter || "s" == sameLetter || "t" == sameLetter || "v" == sameLetter || "w" == sameLetter || "x" == sameLetter || "y" == sameLetter || "z" == sameLetter) {
                 consonant++;
             }
 
-        } 
+        }
     }
     let output = [vocal, consonant];
     return output;
@@ -217,7 +216,7 @@ let wordsToVerify = ["amar", "arma", "rana", "mara", "rama", "roma", "amor", "ra
 
 function anagramVerifier(wordToExplore, listOfWords) {
     let posAnagrama = []
-    listOfWords.forEach((word,number) => {
+    listOfWords.forEach((word, number) => {
         const arrayWordsOrganized = word.split("").sort().join("")
         const arrayMethodsOrganized = wordExplore.split("").sort().join("")
         if (arrayWordsOrganized === arrayMethodsOrganized) {
@@ -239,7 +238,7 @@ let testObjMultiContainer = {
 function vocalsRemoverFromObject(objectMultiContainer) {
     let lists = objectMultiContainer.listA.concat(objectMultiContainer.listB);
     for (let i = 0; i < lists.length; i++) {
-        lists[i] = lists [i].replace(/[aeiou]/g, "");
+        lists[i] = lists[i].replace(/[aeiou]/g, "");
     }
     console.log(lists);
 }
@@ -265,5 +264,17 @@ let testListA = ["amor", "sabor", "calor", "firma", "mara"];
 let testListB = ["roma", "robar", "portar", "arma", "mora"];
 
 function doubleListVerifier(listA, listB) {
-    // :)
+    let counter = 0;
+    for (let i = 0; i < listA.length; i++) {
+        for (let j = 0; j < listB.length; j++) {
+            listA[i] = listA[i].split("").reverse().join("");
+            if (listA[i] === listB[j]) {
+                counter++;
+            }
+
+        }
+
+    }
+    return counter;
 }
+console.log(doubleListVerifier(testListA, testListB));
