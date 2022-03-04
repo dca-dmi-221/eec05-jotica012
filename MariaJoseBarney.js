@@ -251,8 +251,17 @@ function vocalsRemoverFromObject(objectMultiContainer) {
 let someWordsToTest = ["compañeros", "estudiantes", "señores", "amigos", "graduandos", "artistas", "universitarios"];
 
 function lastVocalReplacer(words) {
-    // :)
+    const vocals = ["a","e","i","o","u"];
+
+    for (let i = 0; i < words.length; i++) {
+        words[i] = words[i].split("").reverse();
+        let letter = words[i].find((array, element, position)=> array [element]=== vocals[position]);
+        words[i] = words[i].join("").replace(letter, "X");
+        words[i] = words[i].split("").reverse().join("");
+    }
+    return words 
 }
+lastVocalReplacer (someWordsToTest);
 
 //10
 /*Dada una lista de palabras verificar si alguna de las palabras es la
